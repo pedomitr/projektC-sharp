@@ -32,35 +32,35 @@
             "Petar",
             "Domitrović",
             "m",
-            "25/04/1996",
+            "1996/04/25",
             "Hrvatska",
             "Zagreb"}, -1);
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "Luka",
             "Krajina",
             "m",
-            "25/12/1994",
+            "1994/12/25",
             "Hrvatska",
             "Slavonski Brod"}, -1);
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "Perica",
             "Jurić",
             "m",
-            "12/11/1992",
+            "1992/11/12",
             "Hrvatska",
             "Velika Gorica"}, -1);
             System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ivana",
             "Bosanac",
             "ž",
-            "03/03/1992",
+            "1992/03/03",
             "Bosna i Hercegovina",
             "Sarajevo"}, -1);
             System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "Anna",
             "McMuffin",
             "ž",
-            "08/09/1995",
+            "1995/09/08",
             "Irska",
             "Dublin"}, -1);
             this.button1 = new System.Windows.Forms.Button();
@@ -76,7 +76,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 113);
+            this.button1.Location = new System.Drawing.Point(12, 221);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -103,7 +103,7 @@
             listViewItem5});
             this.listView1.Location = new System.Drawing.Point(12, 12);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(550, 95);
+            this.listView1.Size = new System.Drawing.Size(612, 200);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -129,9 +129,9 @@
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Datum rođenja";
+            this.columnHeader3.Text = "Datum rođenja(yyyy/mm/dd)";
             this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 84;
+            this.columnHeader3.Width = 146;
             // 
             // columnHeader4
             // 
@@ -147,7 +147,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(487, 113);
+            this.button2.Location = new System.Drawing.Point(549, 221);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 3;
@@ -159,11 +159,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(573, 149);
+            this.ClientSize = new System.Drawing.Size(638, 256);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button1);
-            this.MaximumSize = new System.Drawing.Size(589, 1000);
+            this.MaximumSize = new System.Drawing.Size(1000, 1000);
             this.MinimumSize = new System.Drawing.Size(589, 39);
             this.Name = "Form1";
             this.Text = "Form1";
