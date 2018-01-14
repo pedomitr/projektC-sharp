@@ -72,6 +72,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button2 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // button1
@@ -103,7 +104,7 @@
             listViewItem5});
             this.listView1.Location = new System.Drawing.Point(12, 12);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(612, 200);
+            this.listView1.Size = new System.Drawing.Size(622, 200);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -123,15 +124,15 @@
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Spol";
+            this.columnHeader2.Text = "Spol(m/ž)";
             this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 36;
+            this.columnHeader2.Width = 57;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Datum rođenja(yyyy/mm/dd)";
+            this.columnHeader3.Text = "Datum rođenja(gggg/mm/dd)";
             this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 146;
+            this.columnHeader3.Width = 150;
             // 
             // columnHeader4
             // 
@@ -143,11 +144,11 @@
             // 
             this.columnHeader5.Text = "Mjesto rođenja";
             this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader5.Width = 96;
+            this.columnHeader5.Width = 97;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(549, 221);
+            this.button2.Location = new System.Drawing.Point(559, 218);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 3;
@@ -159,12 +160,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 256);
+            this.ClientSize = new System.Drawing.Size(646, 256);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button1);
-            this.MaximumSize = new System.Drawing.Size(1000, 1000);
-            this.MinimumSize = new System.Drawing.Size(589, 39);
+            this.MaximumSize = new System.Drawing.Size(662, 295);
+            this.MinimumSize = new System.Drawing.Size(662, 295);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -182,6 +183,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Button button2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

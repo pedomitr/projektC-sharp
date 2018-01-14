@@ -27,13 +27,15 @@ namespace projektC_sharp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ListViewItem item = new ListViewItem("Petar");
-            item.SubItems.Add("Domitrović");
-            item.SubItems.Add("m");
-            item.SubItems.Add("25/04/1996");
-            item.SubItems.Add("Hrvatska");
-            item.SubItems.Add("Zagreb");
-            listView1.Items.Add(item);
+            Dodaj dlg = new Dodaj(listView1);
+            dlg.Visible = true;
+            //ListViewItem item = new ListViewItem("Petar");
+            //item.SubItems.Add("Domitrović");
+            //item.SubItems.Add("m");
+            //item.SubItems.Add("1996/04/25");
+            //item.SubItems.Add("Hrvatska");
+            //item.SubItems.Add("Zagreb");
+            //listView1.Items.Add(item);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -87,5 +89,5 @@ namespace projektC_sharp
             else
                 return returnVal;
         }
-    }
+    }  
 }
