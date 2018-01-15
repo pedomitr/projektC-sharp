@@ -36,6 +36,16 @@ namespace projektC_sharp
             listView1.Items.Clear();
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int count = listView1.SelectedItems.Count;
+            if (count == 0) return;
+            for(int i = 0; i < count; ++i)
+            {
+                listView1.SelectedItems[0].Remove();
+            }
+        }
+
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -62,37 +72,29 @@ namespace projektC_sharp
             listView1.Sort();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            int count = listView1.SelectedItems.Count;
-            if (count == 0) return;
-            for(int i = 0; i < count; ++i)
-            {
-                listView1.SelectedItems[0].Remove();
-            }
-        }
 
         public void DateSort()
         {
-            for(int i = 0; i < listView1.Items.Count - 1; ++i)
+            int count = listView1.Items.Count;
+            int index = 0;
+            ListViewItem item = new ListViewItem();
+            for (int i = 0; i < count - 1; ++i)
             {
-                if(DateComparer(listView1.Items[i], listView1.Items[i + 1]) > 0)
+                item = listView1.Items[i];
+                for (int j = i + 1; j < count - 1; ++j)
                 {
-                    SwapListViewItems(listView1.Items[i], listView1.Items[i + 1]);
+                    if(DateComparer(item, listView1.Items[j]) > 0)
+                    {
+                        listView1.BeginUpdate();
+                        index = item.Index;
+                        listView1.Items.RemoveAt(index);
+                        listView1.Items.Insert(j, item);
+                        listView1.EndUpdate();
+                    }
                 }
 
             }
         }
-        private void SwapListViewItems(ListViewItem itemA, ListViewItem itemB)
-        {
-            int bIndex = itemB.Index;
-            int aIndex = itemA.Index;
-            listView1.Items.Remove(itemB);
-            listView1.Items.Remove(itemA);
-            listView1.Items.Insert(bIndex, itemA);
-            listView1.Items.Insert(aIndex, itemB);
-        }
-
 
         public int DateComparer(object x, object y)
         {
