@@ -43,8 +43,12 @@ namespace projektC_sharp
         }
         private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
         {
+            if(e.Column == 3)
+            {
+                DateSort();
+                return;
+            }
             ListViewItemComparer comparer = (ListViewItemComparer)listView1.ListViewItemSorter;
-
             if (e.Column == comparer.Column && comparer.Order == SortOrder.Ascending)
             {
                 comparer.Order = SortOrder.Descending;
@@ -70,36 +74,42 @@ namespace projektC_sharp
 
         public void DateSort()
         {
-            ListViewItem temp;
             for(int i = 0; i < listView1.Items.Count - 1; ++i)
             {
                 if(DateComparer(listView1.Items[i], listView1.Items[i + 1]) > 0)
                 {
-                    temp = listView1.Items[i];
-                    listView1.Items[i] = listView1.Items[i - 1];
-                    listView1.Items[i - 1] = temp;
+                    SwapListViewItems(listView1.Items[i], listView1.Items[i + 1]);
                 }
 
             }
+        }
+        private void SwapListViewItems(ListViewItem itemA, ListViewItem itemB)
+        {
+            int bIndex = itemB.Index;
+            int aIndex = itemA.Index;
+            listView1.Items.Remove(itemB);
+            listView1.Items.Remove(itemA);
+            listView1.Items.Insert(bIndex, itemA);
+            listView1.Items.Insert(aIndex, itemB);
         }
 
 
         public int DateComparer(object x, object y)
         {
-            int returnVal = String.Compare(((ListViewItem)x).SubItems[3].Text.Substring(6, 4),
+            int returnVal = 0;
+            returnVal = String.Compare(((ListViewItem)x).SubItems[3].Text.Substring(6, 4),
                          ((ListViewItem)y).SubItems[3].Text.Substring(6, 4));
-            if (returnVal > 0)
+            if (returnVal <= 0)
             {
                 returnVal = String.Compare(((ListViewItem)x).SubItems[3].Text.Substring(3, 2),
                          ((ListViewItem)y).SubItems[3].Text.Substring(3, 2));
             }
-            else if (returnVal > 0)
+            else if (returnVal <= 0)
             {
                 returnVal = String.Compare(((ListViewItem)x).SubItems[3].Text.Substring(0, 2),
                              ((ListViewItem)y).SubItems[3].Text.Substring(0, 2));
 
             }
-
             return returnVal;
         }
     }
@@ -121,10 +131,6 @@ namespace projektC_sharp
         public int Compare(object x, object y)
         {
             int returnVal = 0;
-            if(Column == 3)
-            {
-                return 0;
-            }
             returnVal = String.Compare(((ListViewItem)x).SubItems[Column].Text,
                         ((ListViewItem)y).SubItems[Column].Text);
             if (Order == SortOrder.Descending)
