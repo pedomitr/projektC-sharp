@@ -74,7 +74,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.button3 = new System.Windows.Forms.Button();
-            this.dodaj1 = new projektC_sharp.Dodaj();
+            this.dodaj1 = new projektC_sharp.Dodaj(listView1);
             this.SuspendLayout();
             // 
             // button1

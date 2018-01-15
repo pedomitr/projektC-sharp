@@ -12,11 +12,11 @@ namespace projektC_sharp
 {
     public partial class Dodaj : UserControl
     {
-        //private ListView hLvw;
-        public Dodaj(/*ListView lvw*/)
+        private ListView hLvw;
+        public Dodaj(ListView lvw)
         {
             InitializeComponent();
-           // hLvw = lvw;
+            hLvw = lvw;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,6 +29,7 @@ namespace projektC_sharp
             item.SubItems.Add(textBox6.Text);
             hLvw.Items.Add(item);
             this.Visible = false;
+            
         }
     }
 }

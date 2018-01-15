@@ -18,6 +18,7 @@ namespace projektC_sharp
         {
             InitializeComponent();
             this.listView1.ListViewItemSorter = new ListViewItemComparer();
+            dodaj1.Visible = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -27,15 +28,7 @@ namespace projektC_sharp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //dodaj1.Visible = true;
-
-            //ListViewItem item = new ListViewItem("Petar");
-            //item.SubItems.Add("Domitrović");
-            //item.SubItems.Add("m");
-            //item.SubItems.Add("1996/04/25");
-            //item.SubItems.Add("Hrvatska");
-            //item.SubItems.Add("Zagreb");
-            //listView1.Items.Add(item);
+            dodaj1.Visible = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -67,7 +60,12 @@ namespace projektC_sharp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            listView1.SelectedItems[0].Remove();
+            int count = listView1.SelectedItems.Count;
+            if (count == 0) return;
+            for(int i = 0; i < count; ++i)
+            {
+                listView1.SelectedItems[0].Remove();
+            }
         }
     }
 
