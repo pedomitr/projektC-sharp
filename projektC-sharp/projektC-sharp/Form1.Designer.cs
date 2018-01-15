@@ -32,35 +32,35 @@
             "Petar",
             "Domitrović",
             "m",
-            "1996/04/25",
+            "25.04.1996",
             "Hrvatska",
             "Zagreb"}, -1);
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "Luka",
             "Krajina",
             "m",
-            "1994/12/25",
+            "25.12.1994",
             "Hrvatska",
             "Slavonski Brod"}, -1);
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "Perica",
             "Jurić",
             "m",
-            "1992/11/12",
+            "12.11.1992",
             "Hrvatska",
             "Velika Gorica"}, -1);
             System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ivana",
             "Bosanac",
             "ž",
-            "1992/03/03",
+            "03.03.1992",
             "Bosna i Hercegovina",
             "Sarajevo"}, -1);
             System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "Anna",
             "McMuffin",
             "ž",
-            "1995/09/08",
+            "08.09.1995",
             "Irska",
             "Dublin"}, -1);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
@@ -75,7 +75,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.button3 = new System.Windows.Forms.Button();
-            this.dodaj1 = new projektC_sharp.Dodaj(listView1);
+            this.dodaj1 = new Dodaj(listView1);
             this.SuspendLayout();
             // 
             // button1
@@ -175,6 +175,7 @@
             this.dodaj1.Name = "dodaj1";
             this.dodaj1.Size = new System.Drawing.Size(461, 188);
             this.dodaj1.TabIndex = 6;
+            this.dodaj1.Visible = false;
             // 
             // Form1
             // 

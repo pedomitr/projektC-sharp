@@ -67,6 +67,41 @@ namespace projektC_sharp
                 listView1.SelectedItems[0].Remove();
             }
         }
+
+        public void DateSort()
+        {
+            ListViewItem temp;
+            for(int i = 0; i < listView1.Items.Count - 1; ++i)
+            {
+                if(DateComparer(listView1.Items[i], listView1.Items[i + 1]) > 0)
+                {
+                    temp = listView1.Items[i];
+                    listView1.Items[i] = listView1.Items[i - 1];
+                    listView1.Items[i - 1] = temp;
+                }
+
+            }
+        }
+
+
+        public int DateComparer(object x, object y)
+        {
+            int returnVal = String.Compare(((ListViewItem)x).SubItems[3].Text.Substring(6, 4),
+                         ((ListViewItem)y).SubItems[3].Text.Substring(6, 4));
+            if (returnVal > 0)
+            {
+                returnVal = String.Compare(((ListViewItem)x).SubItems[3].Text.Substring(3, 2),
+                         ((ListViewItem)y).SubItems[3].Text.Substring(3, 2));
+            }
+            else if (returnVal > 0)
+            {
+                returnVal = String.Compare(((ListViewItem)x).SubItems[3].Text.Substring(0, 2),
+                             ((ListViewItem)y).SubItems[3].Text.Substring(0, 2));
+
+            }
+
+            return returnVal;
+        }
     }
 
     class ListViewItemComparer : IComparer
@@ -78,43 +113,28 @@ namespace projektC_sharp
             Column = 0;
         }
         public ListViewItemComparer(int column)
-        {
+        {           
             Column = column;
         }
 
 
         public int Compare(object x, object y)
         {
+            int returnVal = 0;
             if(Column == 3)
             {
-                DateComparer(x, y);
+                return 0;
             }
-            int returnVal = String.Compare(((ListViewItem)x).SubItems[Column].Text,
-            ((ListViewItem)y).SubItems[Column].Text);
-
+            returnVal = String.Compare(((ListViewItem)x).SubItems[Column].Text,
+                        ((ListViewItem)y).SubItems[Column].Text);
             if (Order == SortOrder.Descending)
                 return -returnVal;
             else
                 return returnVal;
         }
-
-        public int DateComparer(object x, object y)
-        {
-            int returnVal = String.Compare(((ListViewItem)x).SubItems["Datum rođenja"].Text.Substring(6, 4),
-                         ((ListViewItem)y).SubItems["Datum rođenja"].Text.Substring(6, 4));
-            if (returnVal == 0)
-            {
-                returnVal = String.Compare(((ListViewItem)x).SubItems["Datum rođenja"].Text.Substring(3, 2),
-                         ((ListViewItem)y).SubItems["Datum rođenja"].Text.Substring(3, 2));
-            }
-            if (returnVal == 0)
-            {
-                returnVal = String.Compare(((ListViewItem)x).SubItems["Datum rođenja"].Text.Substring(0, 2),
-                             ((ListViewItem)y).SubItems["Datum rođenja"].Text.Substring(0, 2));
-            }
-            return returnVal;
-        }
     }  
+
+
 
     
 }
