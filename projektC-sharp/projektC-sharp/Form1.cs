@@ -73,7 +73,6 @@ namespace projektC_sharp
     {
         public SortOrder Order = SortOrder.Ascending;
         public int Column;
-
         public ListViewItemComparer()
         {
             Column = 0;
@@ -82,8 +81,14 @@ namespace projektC_sharp
         {
             Column = column;
         }
+
+
         public int Compare(object x, object y)
         {
+            if(Column == 3)
+            {
+                DateComparer(x, y);
+            }
             int returnVal = String.Compare(((ListViewItem)x).SubItems[Column].Text,
             ((ListViewItem)y).SubItems[Column].Text);
 
@@ -92,5 +97,24 @@ namespace projektC_sharp
             else
                 return returnVal;
         }
+
+        public int DateComparer(object x, object y)
+        {
+            int returnVal = String.Compare(((ListViewItem)x).SubItems["Datum rođenja"].Text.Substring(6, 4),
+                         ((ListViewItem)y).SubItems["Datum rođenja"].Text.Substring(6, 4));
+            if (returnVal == 0)
+            {
+                returnVal = String.Compare(((ListViewItem)x).SubItems["Datum rođenja"].Text.Substring(3, 2),
+                         ((ListViewItem)y).SubItems["Datum rođenja"].Text.Substring(3, 2));
+            }
+            if (returnVal == 0)
+            {
+                returnVal = String.Compare(((ListViewItem)x).SubItems["Datum rođenja"].Text.Substring(0, 2),
+                             ((ListViewItem)y).SubItems["Datum rođenja"].Text.Substring(0, 2));
+            }
+            return returnVal;
+        }
     }  
+
+    
 }
