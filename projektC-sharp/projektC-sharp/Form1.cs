@@ -27,8 +27,8 @@ namespace projektC_sharp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Dodaj dlg = new Dodaj(listView1);
-            dlg.Visible = true;
+            //dodaj1.Visible = true;
+
             //ListViewItem item = new ListViewItem("Petar");
             //item.SubItems.Add("Domitrović");
             //item.SubItems.Add("m");
@@ -63,6 +63,11 @@ namespace projektC_sharp
 
             comparer.Column = e.Column;
             listView1.Sort();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            listView1.SelectedItems[0].Remove();
         }
     }
 
