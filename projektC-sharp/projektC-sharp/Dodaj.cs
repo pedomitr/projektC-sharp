@@ -34,7 +34,7 @@ namespace projektC_sharp
             }
             AddZeros(textBox3);
             AddZeros(textBox4);
-            item.SubItems.Add(textBox3.Text + "." + textBox4.Text + "." + textBox5.Text + ".");
+            item.SubItems.Add(textBox5.Text + "." + textBox3.Text + "." + textBox4.Text + ".");
             item.SubItems.Add(textBox6.Text);
             item.SubItems.Add(textBox7.Text);
             hLvw.Items.Add(item);

@@ -53,11 +53,6 @@ namespace projektC_sharp
         }
         private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            if(e.Column == 3)
-            {
-                DateSort();
-                return;
-            }
             ListViewItemComparer comparer = (ListViewItemComparer)listView1.ListViewItemSorter;
             if (e.Column == comparer.Column && comparer.Order == SortOrder.Ascending)
             {
@@ -70,49 +65,6 @@ namespace projektC_sharp
 
             comparer.Column = e.Column;
             listView1.Sort();
-        }
-
-
-        public void DateSort()
-        {
-            int count = listView1.Items.Count;
-            int index = 0;
-            ListViewItem item = new ListViewItem();
-            for (int i = 0; i < count - 1; ++i)
-            {
-                item = listView1.Items[i];
-                for (int j = i + 1; j < count - 1; ++j)
-                {
-                    if(DateComparer(item, listView1.Items[j]) > 0)
-                    {
-                        listView1.BeginUpdate();
-                        index = item.Index;
-                        listView1.Items.RemoveAt(index);
-                        listView1.Items.Insert(j, item);
-                        listView1.EndUpdate();
-                    }
-                }
-
-            }
-        }
-
-        public int DateComparer(object x, object y)
-        {
-            int returnVal = 0;
-            returnVal = String.Compare(((ListViewItem)x).SubItems[3].Text.Substring(6, 4),
-                         ((ListViewItem)y).SubItems[3].Text.Substring(6, 4));
-            if (returnVal <= 0)
-            {
-                returnVal = String.Compare(((ListViewItem)x).SubItems[3].Text.Substring(3, 2),
-                         ((ListViewItem)y).SubItems[3].Text.Substring(3, 2));
-            }
-            else if (returnVal <= 0)
-            {
-                returnVal = String.Compare(((ListViewItem)x).SubItems[3].Text.Substring(0, 2),
-                             ((ListViewItem)y).SubItems[3].Text.Substring(0, 2));
-
-            }
-            return returnVal;
         }
     }
 
@@ -140,9 +92,5 @@ namespace projektC_sharp
             else
                 return returnVal;
         }
-    }  
-
-
-
-    
+    }     
 }

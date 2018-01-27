@@ -182,7 +182,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(329, 27);
+            this.textBox3.Location = new System.Drawing.Point(380, 27);
             this.textBox3.MaxLength = 2;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(20, 20);
@@ -193,7 +193,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(357, 27);
+            this.textBox4.Location = new System.Drawing.Point(409, 27);
             this.textBox4.MaxLength = 2;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(20, 20);
@@ -203,7 +203,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(383, 27);
+            this.textBox5.Location = new System.Drawing.Point(329, 27);
             this.textBox5.MaxLength = 4;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(45, 20);
